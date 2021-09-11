@@ -10,4 +10,5 @@ import Foundation
 class Storage {
     static var allUsers = UserStorage.init().allUsers
     static var allPlaces = PlaceStorage.init().allPlaces
+    static var history = HistoryStorage.init().history
 }

@@ -9,13 +9,22 @@ import UIKit
 
 class GoViewController: UIViewController {
     
+    @IBOutlet var backGroundView: UIView!
+    @IBOutlet var backGroundImageView: UIImageView!
     @IBOutlet var goButton: UIButton!
     @IBOutlet var resultDestinationPlaceLabel: UILabel!
     @IBOutlet var resultDestinationLogoImage: UIImageView!
     @IBOutlet var goButtonLabel: UILabel!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
+    var currentPlace = PlaceModel(name: "Where", type: "fastfood", logo: "default", location: "default")
+    var selectedPhoto = Int()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBlur()
+        backGroundImageView.image = nil
+        //view.delegate = self
     }
     
     override func viewWillLayoutSubviews() {
@@ -25,23 +34,71 @@ class GoViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = .systemBackground
        goButtonLabel.text = "GO"
+        self.view.backgroundColor = .systemPink
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        //backGroundImageView.
+        backGroundView.layer.removeAllAnimations()
+        //shakeAnimation(animateview: backGroundImageView)
+        rotateAnimation(backGroundImageView)
+        shakeAnimation2(animateview: backGroundView)
     }
     
     
     @IBAction func goButtonPressed(_ sender: UIButton) {
-        //goButtonLabel.text = "SEARCHING"
-        resultDestinationLogoImage.alpha = 0
-        resultDestinationPlaceLabel.alpha = 0
-        getResultDestination()
-        goButtonAnimate()
-        activityIndicator.startAnimating()
-        //clearResultDestination()
-       // goButtonLabel.text = "SEARCHING"
-      //  scaleAnimation(goButton)
         
-        //goButtonLabel.rotate360Degrees()
+        
+        if !checkIsAlreadyGetResultToday() {
+            //goButtonLabel.text = "SEARCHING"
+           // resultDestinationLogoImage.alpha = 0
+            //resultDestinationPlaceLabel.alpha = 0
+            //backGroundImageView.alpha = 0
+            getResultDestination()
+            goButtonAnimate()
+            activityIndicator.startAnimating()
+            
+            
+            //clearResultDestination()
+           // goButtonLabel.text = "SEARCHING"
+          //  scaleAnimation(goButton)
+            
+            //goButtonLabel.rotate360Degrees()
+
+            
+            Storage.history.append(HistoryModel(date: Date(), place: currentPlace, isGoing: false))
+        } else {
+            print("error")
+        }
+        
+
+        
     }
     
+    func checkIsAlreadyGetResultToday() -> Bool {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        let dateString = formatter.string(from: Date())
+        let dateString2 = formatter.string(from: Storage.history.last?.date ?? Date())
+        
+        if dateString == dateString2 {
+            return false
+        }
+        return false
+    }
+    
+    
+    func addBlur() {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = backGroundImageView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        backGroundImageView.addSubview(blurEffectView)
+    }
     
     @IBAction func goButtonAnimate() {
         
@@ -55,7 +112,7 @@ class GoViewController: UIViewController {
                 let originalHeightButton = goButton.bounds.size.height
                 
                 UIView.addKeyframe(withRelativeStartTime: 0,
-                                   relativeDuration: 0,
+                                   relativeDuration: 0.1,
                                    animations: {
                                     goButton.backgroundColor = .systemBlue
                                    })
@@ -63,6 +120,7 @@ class GoViewController: UIViewController {
                                    relativeDuration: 0.1,
                                    animations: {
                                     goButton.layer.cornerRadius = goButton.bounds.height / 2
+                                    //goButton.alpha = 0.6
                                    })
                 UIView.addKeyframe(withRelativeStartTime: 0,
                                    relativeDuration: 0.1,
@@ -71,6 +129,17 @@ class GoViewController: UIViewController {
                                    goButton.bounds.size.height = goButton.bounds.height
                                     goButtonLabel.alpha = 0
                                     activityIndicator.alpha = 1
+                                   // backGroundImageView.alpha = 0
+                                   // goButtonLabel.text = "SEARCHING"
+                                   })
+                
+                UIView.addKeyframe(withRelativeStartTime: 0.5,
+                                   relativeDuration: 0.3,
+                                   animations: {
+                                    goButton.alpha = 1
+                                    goButton.bounds.size.width = goButton.bounds.height * 30
+                                   goButton.bounds.size.height = goButton.bounds.height * 30
+                                    goButton.layer.cornerRadius = goButton.bounds.height / 2
                                    // goButtonLabel.text = "SEARCHING"
                                    })
                 
@@ -99,6 +168,7 @@ class GoViewController: UIViewController {
                                     activityIndicator.alpha = 0
                                     resultDestinationLogoImage.alpha = 1
                                     resultDestinationPlaceLabel.alpha = 1
+                                    backGroundImageView.alpha = 1
                                     UIView.animate(withDuration: 0.15, delay: 3, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
                                     }, completion: {_ in
                                         //activityIndicator.stopAnimating()
@@ -164,15 +234,59 @@ class GoViewController: UIViewController {
             },
             completion: { [self]_ in
                // goButtonLabel.text = "GO"
+               
             }
         )
     }
     
+    func shakeAnimation(animateview: UIView) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 5
+        animation.repeatCount = .infinity
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: animateview.center.x - 50, y: animateview.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: animateview.center.x + 50, y: animateview.center.y))
+        
+        animateview.layer.add(animation, forKey: "position")
+    }
+    
+    
+    func shakeAnimation2(animateview: UIView) {
+        UIView.animateKeyframes(
+            withDuration: 6,
+            delay: 0,
+            options: [.repeat, .autoreverse],
+            animations: { [self] in
+                UIView.addKeyframe(withRelativeStartTime: 0,
+                                   relativeDuration: 0.5,
+                                   animations: {
+                                    animateview.transform = CGAffineTransform(translationX: -30, y: 0)
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0.5,
+                                   relativeDuration: 0.5,
+                                   animations: {
+                                    animateview.transform = CGAffineTransform(translationX: 30, y: 0)
+                                   })
+            },
+            completion: { [self]_ in
+               // goButtonLabel.text = "GO"
+               
+            }
+        )
+       
+    }
+    
     
     func getResultDestination() {
-        let resultIndex = Int.random(in: 0..<Storage.allPlaces.count)
-        resultDestinationPlaceLabel.text = Storage.allPlaces[resultIndex].name
-        resultDestinationLogoImage.image = UIImage(named: Storage.allPlaces[resultIndex].logo)
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) { [self] in
+            let resultIndex = Int.random(in: 0..<Storage.allPlaces.count)
+            resultDestinationPlaceLabel.text = Storage.allPlaces[resultIndex].name
+            resultDestinationLogoImage.image = UIImage(named: Storage.allPlaces[resultIndex].logo)
+            backGroundImageView.image = UIImage(named: Storage.allPlaces[resultIndex].logo)
+            currentPlace = Storage.allPlaces[resultIndex]
+        }
     }
     
     func clearResultDestination() {
@@ -192,11 +306,12 @@ class GoViewController: UIViewController {
 }
 
 func rotateAnimation(_ viewToAnimate: UIView) {
-    UIView.animate(withDuration: 4, delay: 0, usingSpringWithDamping: 0.0, initialSpringVelocity: 0.1, options: [.beginFromCurrentState, .curveEaseIn], animations: {
-        viewToAnimate.transform = CGAffineTransform(rotationAngle: .pi)
+    UIView.animate(withDuration: 4, delay: 0, usingSpringWithDamping: 0.1, initialSpringVelocity: 0.1, options: [.curveEaseIn, .repeat, .autoreverse], animations: {
+        viewToAnimate.transform = CGAffineTransform(rotationAngle: .pi / 150)
     }) { (_) in
         UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1, options: .repeat, animations: {
-            viewToAnimate.transform = CGAffineTransform(rotationAngle: 0)
+           // viewToAnimate.transform = .identity
+            viewToAnimate.transform = CGAffineTransform(rotationAngle: -.pi / 150)
         }, completion: nil)
     }
 }
