@@ -11,8 +11,8 @@ class FriendsTableViewCell: UITableViewCell {
     
     static let identifier = "FriendsTableViewCellReuseIndentifier"
     
-    @IBOutlet var placeNameLabelOutlet: UILabel!
-    @IBOutlet var logoImage: UIImageView!
+    @IBOutlet var friendAvatarImage: UIImageView!
+    @IBOutlet var friendNameLabel: UILabel!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -20,14 +20,16 @@ class FriendsTableViewCell: UITableViewCell {
         
     }
     
-    func configure(placeName: String?, placeLogo: String) {
+    func configure(friendName: String?, friendAvatar: String) {
         //imageChannelsCell.image = UIImage(named: imageName ?? "logo-default")
-        placeNameLabelOutlet.text = placeName
-        logoImage.image = UIImage(named: placeLogo)
+        friendNameLabel.text = friendName
+        friendAvatarImage.image = UIImage(named: friendAvatar)
     }
     
     func configureCellStaticApperance() {
         self.backgroundColor = .clear
         selectedBackgroundView?.backgroundColor = .gray
+        friendAvatarImage.layer.cornerRadius = friendAvatarImage.bounds.size.width / 2
+        
     }
 }
