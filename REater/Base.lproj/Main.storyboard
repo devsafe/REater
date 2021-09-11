@@ -44,7 +44,7 @@
         <!--Places-->
         <scene sceneID="0fI-bK-OeE">
             <objects>
-                <viewController id="meV-Wg-1bW" sceneMemberID="viewController">
+                <viewController id="meV-Wg-1bW" customClass="PlacesViewController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KeQ-q5-zz7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,6 +70,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="oi4-Qy-HAj" id="HFa-LA-cZb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpL-hJ-b3y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
