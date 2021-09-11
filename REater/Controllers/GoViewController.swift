@@ -22,9 +22,12 @@ class GoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addBlur()
         backGroundImageView.image = nil
         //view.delegate = self
+        resultDestinationLogoImage.image = UIImage(named: "restaurant")
+        backGroundImageView.image = UIImage(named: "default")
     }
     
     override func viewWillLayoutSubviews() {
@@ -34,6 +37,7 @@ class GoViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = .systemBackground
        goButtonLabel.text = "GO"
+        
         self.view.backgroundColor = .systemPink
         
         
@@ -46,6 +50,7 @@ class GoViewController: UIViewController {
         //shakeAnimation(animateview: backGroundImageView)
         rotateAnimation(backGroundImageView)
         shakeAnimation2(animateview: backGroundView)
+        
     }
     
     

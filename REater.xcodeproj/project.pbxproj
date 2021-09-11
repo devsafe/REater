@@ -12,6 +12,7 @@
 		11BE4C3726ED29260058DC58 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE4C3626ED29260058DC58 /* HistoryTableViewCell.swift */; };
 		11BE4C3926ED2CE40058DC58 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE4C3826ED2CE40058DC58 /* HistoryModel.swift */; };
 		11BE4C3B26ED2DFD0058DC58 /* HistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE4C3A26ED2DFD0058DC58 /* HistoryStorage.swift */; };
+		11BE4C3D26ED54780058DC58 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE4C3C26ED54780058DC58 /* TabBarController.swift */; };
 		11F6D1EE26EC9A7500D17B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D1ED26EC9A7500D17B60 /* AppDelegate.swift */; };
 		11F6D1F026EC9A7500D17B60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D1EF26EC9A7500D17B60 /* SceneDelegate.swift */; };
 		11F6D1F226EC9A7500D17B60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D1F126EC9A7500D17B60 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		11BE4C3626ED29260058DC58 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryTableViewCell.swift; path = REater/Cell/HistoryTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		11BE4C3826ED2CE40058DC58 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		11BE4C3A26ED2DFD0058DC58 /* HistoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStorage.swift; sourceTree = "<group>"; };
+		11BE4C3C26ED54780058DC58 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		11F6D1EA26EC9A7500D17B60 /* REater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11F6D1ED26EC9A7500D17B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11F6D1EF26EC9A7500D17B60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				11BE4C3226ED28740058DC58 /* HistoryViewController.swift */,
 				11F6D21A26ECD4DC00D17B60 /* FriendsViewController.swift */,
 				11F6D21426ECBA8900D17B60 /* GoViewController.swift */,
+				11BE4C3C26ED54780058DC58 /* TabBarController.swift */,
 				11F6D21026ECAA6B00D17B60 /* PlacesTableViewCell.swift */,
 				11BE4C3626ED29260058DC58 /* HistoryTableViewCell.swift */,
 				11F6D21826ECD46700D17B60 /* FriendsTableViewCell.swift */,
@@ -218,6 +221,7 @@
 				11BE4C3926ED2CE40058DC58 /* HistoryModel.swift in Sources */,
 				11F6D20F26ECA8EB00D17B60 /* PlacesViewController.swift in Sources */,
 				11BE4C3B26ED2DFD0058DC58 /* HistoryStorage.swift in Sources */,
+				11BE4C3D26ED54780058DC58 /* TabBarController.swift in Sources */,
 				11F6D20326EC9BEC00D17B60 /* UserModel.swift in Sources */,
 				11F6D21B26ECD4DC00D17B60 /* FriendsViewController.swift in Sources */,
 				11F6D20A26ECA78400D17B60 /* Storage.swift in Sources */,

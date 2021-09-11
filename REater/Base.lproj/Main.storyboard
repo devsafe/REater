@@ -272,7 +272,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ihC-Od-sro">
             <objects>
-                <tabBarController id="Yi8-bg-Hml" sceneMemberID="viewController">
+                <tabBarController id="Yi8-bg-Hml" customClass="TabBarController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mzj-65-gzm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

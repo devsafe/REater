@@ -17,7 +17,7 @@ class PlaceStorage {
             PlaceModel(name: "KFC", type: "FastFood", logo: "kfc", location: "Moscow"),
             PlaceModel(name: "Burger King", type: "FastFood", logo: "bk", location: "Moscow"),
             PlaceModel(name: "Tanuki", type: "FastFood", logo: "tanuki", location: "Moscow"),
-            PlaceModel(name: "Laki King", type: "FastFood", logo: "laki", location: "Moscow"),
+            PlaceModel(name: "Papa Johns", type: "FastFood", logo: "pj", location: "Moscow"),
         ]
     }
 }
