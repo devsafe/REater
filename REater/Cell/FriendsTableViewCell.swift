@@ -1,5 +1,5 @@
 //
-//  PlacesTableViewCell.swift
+//  FriendsTableViewCell.swift
 //  REater
 //
 //  Created by Boris Sobolev on 11.09.2021.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class PlacesTableViewCell: UITableViewCell {
+class FriendsTableViewCell: UITableViewCell {
     
-    static let identifier = "PlacesTableViewCellReuseIndentifier"
+    static let identifier = "FriendsTableViewCellReuseIndentifier"
     
     @IBOutlet var placeNameLabelOutlet: UILabel!
     @IBOutlet var logoImage: UIImageView!

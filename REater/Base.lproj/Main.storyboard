@@ -11,18 +11,73 @@
         <!--Go-->
         <scene sceneID="Pmw-wt-2cB">
             <objects>
-                <viewController id="YaY-8Q-7w8" sceneMemberID="viewController">
+                <viewController id="YaY-8Q-7w8" customClass="GoViewController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pgb-a7-umi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We are going to..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcW-NR-wVS">
+                                <rect key="frame" x="16" y="291" width="382" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgF-Ll-v4y">
+                                <rect key="frame" x="16" y="737" width="382" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="uUm-uz-fK0"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="goButtonPressed:" destination="YaY-8Q-7w8" eventType="touchUpInside" id="7cZ-Hz-lN8"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mit-yK-WVC">
+                                <rect key="frame" x="87" y="364.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Oxr-N0-a4l"/>
+                                    <constraint firstAttribute="height" constant="128" id="W6I-nH-un6"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-XT-mIs">
+                                <rect key="frame" x="197" y="418.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33333" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dr-1i-mq5">
+                                <rect key="frame" x="16" y="328" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1lm-bP-YG9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9dr-1i-mq5" firstAttribute="top" secondItem="TcW-NR-wVS" secondAttribute="bottom" constant="16" id="2uW-eb-1Wh"/>
+                            <constraint firstItem="GYN-XT-mIs" firstAttribute="centerX" secondItem="mit-yK-WVC" secondAttribute="centerX" id="5ps-gr-iov"/>
+                            <constraint firstItem="1lm-bP-YG9" firstAttribute="trailing" secondItem="TcW-NR-wVS" secondAttribute="trailing" constant="16" id="9Ak-lt-3H8"/>
+                            <constraint firstItem="mit-yK-WVC" firstAttribute="centerX" secondItem="1lm-bP-YG9" secondAttribute="centerX" id="DxK-aa-hVJ"/>
+                            <constraint firstItem="1lm-bP-YG9" firstAttribute="trailing" secondItem="TgF-Ll-v4y" secondAttribute="trailing" constant="16" id="EnG-aT-RQs"/>
+                            <constraint firstItem="9dr-1i-mq5" firstAttribute="leading" secondItem="1lm-bP-YG9" secondAttribute="leading" constant="16" id="NfN-Yv-7Zc"/>
+                            <constraint firstItem="GYN-XT-mIs" firstAttribute="centerY" secondItem="mit-yK-WVC" secondAttribute="centerY" id="Ptq-J2-xwO"/>
+                            <constraint firstItem="1lm-bP-YG9" firstAttribute="trailing" secondItem="9dr-1i-mq5" secondAttribute="trailing" constant="16" id="Q0X-bt-IBz"/>
+                            <constraint firstItem="TcW-NR-wVS" firstAttribute="leading" secondItem="1lm-bP-YG9" secondAttribute="leading" constant="16" id="QN5-9G-bfK"/>
+                            <constraint firstItem="mit-yK-WVC" firstAttribute="top" secondItem="9dr-1i-mq5" secondAttribute="bottom" constant="16" id="cxA-zv-NEY"/>
+                            <constraint firstItem="TgF-Ll-v4y" firstAttribute="leading" secondItem="1lm-bP-YG9" secondAttribute="leading" constant="16" id="vdm-oG-50u"/>
+                            <constraint firstItem="1lm-bP-YG9" firstAttribute="bottom" secondItem="TgF-Ll-v4y" secondAttribute="bottom" constant="16" id="vwC-XY-dTK"/>
+                            <constraint firstItem="mit-yK-WVC" firstAttribute="centerY" secondItem="1lm-bP-YG9" secondAttribute="centerY" id="xFG-jW-ngQ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Go" image="circles.hexagonpath" catalog="system" id="oqH-jY-w24"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="GYN-XT-mIs" id="ybU-jI-QUx"/>
+                        <outlet property="goButton" destination="TgF-Ll-v4y" id="Y2y-Vh-3pe"/>
+                        <outlet property="resultDestinationLogoImage" destination="mit-yK-WVC" id="eiR-i9-Sdf"/>
+                        <outlet property="resultDestinationPlaceLabel" destination="9dr-1i-mq5" id="vWx-kb-OiV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddB-ON-7wC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="525" y="-599"/>
+            <point key="canvasLocation" x="524.63768115942037" y="-599.33035714285711"/>
         </scene>
         <!--Places-->
         <scene sceneID="CLh-IR-DC8">
@@ -97,7 +152,7 @@
         <!--Friends-->
         <scene sceneID="PuO-HT-Plt">
             <objects>
-                <viewController id="ej1-6L-qAo" sceneMemberID="viewController">
+                <viewController id="ej1-6L-qAo" customClass="FriendsViewController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H8U-3A-AVd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +178,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="aho-M5-f1S" id="tOF-sS-sqa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1n-oy-M3N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

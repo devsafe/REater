@@ -21,6 +21,10 @@
 		11F6D20F26ECA8EB00D17B60 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D20E26ECA8EB00D17B60 /* PlacesViewController.swift */; };
 		11F6D21126ECAA6B00D17B60 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D21026ECAA6B00D17B60 /* PlacesTableViewCell.swift */; };
 		11F6D21326ECADCE00D17B60 /* PlacesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F6D21226ECADCE00D17B60 /* PlacesTableViewCell.xib */; };
+		11F6D21526ECBA8900D17B60 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D21426ECBA8900D17B60 /* GoViewController.swift */; };
+		11F6D21726ECD41D00D17B60 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F6D21626ECD41D00D17B60 /* FriendsTableViewCell.xib */; };
+		11F6D21926ECD46700D17B60 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D21826ECD46700D17B60 /* FriendsTableViewCell.swift */; };
+		11F6D21B26ECD4DC00D17B60 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D21A26ECD4DC00D17B60 /* FriendsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		11F6D20E26ECA8EB00D17B60 /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		11F6D21026ECAA6B00D17B60 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
 		11F6D21226ECADCE00D17B60 /* PlacesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PlacesTableViewCell.xib; path = Cell/PlacesTableViewCell.xib; sourceTree = "<group>"; };
+		11F6D21426ECBA8900D17B60 /* GoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
+		11F6D21626ECD41D00D17B60 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FriendsTableViewCell.xib; path = Cell/FriendsTableViewCell.xib; sourceTree = "<group>"; };
+		11F6D21826ECD46700D17B60 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = REater/Cell/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		11F6D21A26ECD4DC00D17B60 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 				11F6D1F126EC9A7500D17B60 /* ViewController.swift */,
 				11F6D1F326EC9A7500D17B60 /* Main.storyboard */,
 				11F6D21226ECADCE00D17B60 /* PlacesTableViewCell.xib */,
+				11F6D21626ECD41D00D17B60 /* FriendsTableViewCell.xib */,
 				11F6D1F626EC9A7700D17B60 /* Assets.xcassets */,
 				11F6D1F826EC9A7700D17B60 /* LaunchScreen.storyboard */,
 				11F6D1FB26EC9A7700D17B60 /* Info.plist */,
@@ -110,7 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				11F6D20E26ECA8EB00D17B60 /* PlacesViewController.swift */,
+				11F6D21A26ECD4DC00D17B60 /* FriendsViewController.swift */,
+				11F6D21426ECBA8900D17B60 /* GoViewController.swift */,
 				11F6D21026ECAA6B00D17B60 /* PlacesTableViewCell.swift */,
+				11F6D21826ECD46700D17B60 /* FriendsTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F6D1FA26EC9A7700D17B60 /* LaunchScreen.storyboard in Resources */,
+				11F6D21726ECD41D00D17B60 /* FriendsTableViewCell.xib in Resources */,
 				11F6D1F726EC9A7700D17B60 /* Assets.xcassets in Resources */,
 				11F6D1F526EC9A7500D17B60 /* Main.storyboard in Resources */,
 				11F6D21326ECADCE00D17B60 /* PlacesTableViewCell.xib in Resources */,
@@ -188,11 +201,14 @@
 			files = (
 				11F6D20F26ECA8EB00D17B60 /* PlacesViewController.swift in Sources */,
 				11F6D20326EC9BEC00D17B60 /* UserModel.swift in Sources */,
+				11F6D21B26ECD4DC00D17B60 /* FriendsViewController.swift in Sources */,
 				11F6D20A26ECA78400D17B60 /* Storage.swift in Sources */,
+				11F6D21926ECD46700D17B60 /* FriendsTableViewCell.swift in Sources */,
 				11F6D1F226EC9A7500D17B60 /* ViewController.swift in Sources */,
 				11F6D20826EC9E7900D17B60 /* UserStorage.swift in Sources */,
 				11F6D21126ECAA6B00D17B60 /* PlacesTableViewCell.swift in Sources */,
 				11F6D1EE26EC9A7500D17B60 /* AppDelegate.swift in Sources */,
+				11F6D21526ECBA8900D17B60 /* GoViewController.swift in Sources */,
 				11F6D1F026EC9A7500D17B60 /* SceneDelegate.swift in Sources */,
 				11F6D20526EC9CB200D17B60 /* PlaceModel.swift in Sources */,
 				11F6D20C26ECA7E000D17B60 /* PlaceStorage.swift in Sources */,
