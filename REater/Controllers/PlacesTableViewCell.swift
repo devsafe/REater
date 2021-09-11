@@ -29,5 +29,6 @@ class PlacesTableViewCell: UITableViewCell {
     func configureCellStaticApperance() {
         self.backgroundColor = .clear
         selectedBackgroundView?.backgroundColor = .gray
+        logoImage.layer.cornerRadius = 4
     }
 }

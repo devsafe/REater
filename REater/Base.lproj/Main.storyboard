@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,11 +24,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgF-Ll-v4y">
-                                <rect key="frame" x="16" y="737" width="382" height="60"/>
+                                <rect key="frame" x="16" y="721" width="382" height="60"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="uUm-uz-fK0"/>
                                 </constraints>
-                                <state key="normal" title="Go"/>
                                 <connections>
                                     <action selector="goButtonPressed:" destination="YaY-8Q-7w8" eventType="touchUpInside" id="7cZ-Hz-lN8"/>
                                 </connections>
@@ -40,8 +41,14 @@
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-XT-mIs">
-                                <rect key="frame" x="197" y="418.5" width="20" height="20"/>
+                                <rect key="frame" x="197" y="741" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CC-NF-Fri">
+                                <rect key="frame" x="186" y="740.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33333" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dr-1i-mq5">
                                 <rect key="frame" x="16" y="328" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -53,17 +60,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9dr-1i-mq5" firstAttribute="top" secondItem="TcW-NR-wVS" secondAttribute="bottom" constant="16" id="2uW-eb-1Wh"/>
-                            <constraint firstItem="GYN-XT-mIs" firstAttribute="centerX" secondItem="mit-yK-WVC" secondAttribute="centerX" id="5ps-gr-iov"/>
+                            <constraint firstItem="GYN-XT-mIs" firstAttribute="centerX" secondItem="TgF-Ll-v4y" secondAttribute="centerX" id="5ps-gr-iov"/>
                             <constraint firstItem="1lm-bP-YG9" firstAttribute="trailing" secondItem="TcW-NR-wVS" secondAttribute="trailing" constant="16" id="9Ak-lt-3H8"/>
                             <constraint firstItem="mit-yK-WVC" firstAttribute="centerX" secondItem="1lm-bP-YG9" secondAttribute="centerX" id="DxK-aa-hVJ"/>
                             <constraint firstItem="1lm-bP-YG9" firstAttribute="trailing" secondItem="TgF-Ll-v4y" secondAttribute="trailing" constant="16" id="EnG-aT-RQs"/>
                             <constraint firstItem="9dr-1i-mq5" firstAttribute="leading" secondItem="1lm-bP-YG9" secondAttribute="leading" constant="16" id="NfN-Yv-7Zc"/>
-                            <constraint firstItem="GYN-XT-mIs" firstAttribute="centerY" secondItem="mit-yK-WVC" secondAttribute="centerY" id="Ptq-J2-xwO"/>
+                            <constraint firstItem="GYN-XT-mIs" firstAttribute="centerY" secondItem="TgF-Ll-v4y" secondAttribute="centerY" id="Ptq-J2-xwO"/>
                             <constraint firstItem="1lm-bP-YG9" firstAttribute="trailing" secondItem="9dr-1i-mq5" secondAttribute="trailing" constant="16" id="Q0X-bt-IBz"/>
                             <constraint firstItem="TcW-NR-wVS" firstAttribute="leading" secondItem="1lm-bP-YG9" secondAttribute="leading" constant="16" id="QN5-9G-bfK"/>
+                            <constraint firstItem="5CC-NF-Fri" firstAttribute="centerY" secondItem="TgF-Ll-v4y" secondAttribute="centerY" id="T66-mn-5Ok"/>
+                            <constraint firstItem="5CC-NF-Fri" firstAttribute="centerX" secondItem="TgF-Ll-v4y" secondAttribute="centerX" id="cwm-tw-Ggd"/>
                             <constraint firstItem="mit-yK-WVC" firstAttribute="top" secondItem="9dr-1i-mq5" secondAttribute="bottom" constant="16" id="cxA-zv-NEY"/>
                             <constraint firstItem="TgF-Ll-v4y" firstAttribute="leading" secondItem="1lm-bP-YG9" secondAttribute="leading" constant="16" id="vdm-oG-50u"/>
-                            <constraint firstItem="1lm-bP-YG9" firstAttribute="bottom" secondItem="TgF-Ll-v4y" secondAttribute="bottom" constant="16" id="vwC-XY-dTK"/>
+                            <constraint firstItem="1lm-bP-YG9" firstAttribute="bottom" secondItem="TgF-Ll-v4y" secondAttribute="bottom" constant="32" id="vwC-XY-dTK"/>
                             <constraint firstItem="mit-yK-WVC" firstAttribute="centerY" secondItem="1lm-bP-YG9" secondAttribute="centerY" id="xFG-jW-ngQ"/>
                         </constraints>
                     </view>
@@ -71,6 +80,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="GYN-XT-mIs" id="ybU-jI-QUx"/>
                         <outlet property="goButton" destination="TgF-Ll-v4y" id="Y2y-Vh-3pe"/>
+                        <outlet property="goButtonLabel" destination="5CC-NF-Fri" id="G1q-Nr-m4I"/>
                         <outlet property="resultDestinationLogoImage" destination="mit-yK-WVC" id="eiR-i9-Sdf"/>
                         <outlet property="resultDestinationPlaceLabel" destination="9dr-1i-mq5" id="vWx-kb-OiV"/>
                     </connections>
@@ -246,6 +256,9 @@
         <image name="flag.circle" catalog="system" width="128" height="121"/>
         <image name="person.2.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

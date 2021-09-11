@@ -12,6 +12,7 @@ class GoViewController: UIViewController {
     @IBOutlet var goButton: UIButton!
     @IBOutlet var resultDestinationPlaceLabel: UILabel!
     @IBOutlet var resultDestinationLogoImage: UIImageView!
+    @IBOutlet var goButtonLabel: UILabel!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,50 +20,152 @@ class GoViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        goButton.backgroundColor = .systemPink
+        goButton.backgroundColor = .systemGreen
         goButton.layer.cornerRadius = 8
         activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .systemBackground
+       goButtonLabel.text = "GO"
     }
     
     
     @IBAction func goButtonPressed(_ sender: UIButton) {
-
+        //goButtonLabel.text = "SEARCHING"
+        resultDestinationLogoImage.alpha = 0
+        resultDestinationPlaceLabel.alpha = 0
+        getResultDestination()
         goButtonAnimate()
         activityIndicator.startAnimating()
-        clearResultDestination()
+        //clearResultDestination()
+       // goButtonLabel.text = "SEARCHING"
+      //  scaleAnimation(goButton)
+        
+        //goButtonLabel.rotate360Degrees()
     }
     
     
     @IBAction func goButtonAnimate() {
         
-      UIView.animate(withDuration: 2.5, delay: 0.0, usingSpringWithDamping: 0.2,
-        initialSpringVelocity: 0.0,
-        animations: {
-          self.goButton.bounds.size.width += 10.0
-           // self.goButton.layer.cornerRadius = 25
-            //self.goButton.layer.cornerRadius += 25
-        },
-        completion: {_ in
-            self.getResultDestination()
-            self.activityIndicator.stopAnimating()
-        }
-      )
-
-      UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7,
-        initialSpringVelocity: 0.0,
-        animations: {
-         // self.goButton.center.y += 60.0
-//          self.spinner.center = CGPoint(x: 40.0, y: self.loginButton.frame.size.height/2)
-//          self.spinner.alpha = 1.0
-            
-        },
-        completion: nil
-      )
-
-      let tintColor = UIColor(red: 0.85, green: 0.83, blue: 0.45, alpha: 1.0)
-      //tintBackgroundColor(layer: goButton.layer, toColor: tintColor)
-      //roundCorners(layer: goButton.layer, toRadius: 25.0)
-        goButton.layer.cornerRadius = 25
+        UIView.animateKeyframes(
+            withDuration: 2.7,
+            delay: 0,
+            options: [],
+            animations: { [self] in
+                let originalColorButton = goButton.backgroundColor
+                let originalWidhtButton = goButton.bounds.size.width
+                let originalHeightButton = goButton.bounds.size.height
+                
+                UIView.addKeyframe(withRelativeStartTime: 0,
+                                   relativeDuration: 0,
+                                   animations: {
+                                    goButton.backgroundColor = .systemBlue
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                    goButton.layer.cornerRadius = goButton.bounds.height / 2
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                    goButton.bounds.size.width = goButton.bounds.height
+                                   goButton.bounds.size.height = goButton.bounds.height
+                                    goButtonLabel.alpha = 0
+                                    activityIndicator.alpha = 1
+                                   // goButtonLabel.text = "SEARCHING"
+                                   })
+                
+                UIView.addKeyframe(withRelativeStartTime: 0,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                    //goButton.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0.9,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                    goButton.backgroundColor = originalColorButton
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0.9,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                    goButton.transform = .identity
+                                   // goButton.setTitle("r4r4", for: .normal)
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0.9,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                    goButton.bounds.size.width = originalWidhtButton
+                                    goButton.bounds.size.height = originalHeightButton
+                                    goButtonLabel.alpha = 1
+                                    activityIndicator.alpha = 0
+                                    resultDestinationLogoImage.alpha = 1
+                                    resultDestinationPlaceLabel.alpha = 1
+                                    UIView.animate(withDuration: 0.15, delay: 3, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+                                    }, completion: {_ in
+                                        //activityIndicator.stopAnimating()
+                                        print("ddd")
+                                    })
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0.9,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                   // goButton.bounds.size.height = originalHeightButton
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0.9,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                    goButton.layer.cornerRadius = 8
+                                   })
+                
+                UIView.addKeyframe(withRelativeStartTime: 0,
+                                                   relativeDuration: 0.1,
+                                                   animations: {
+                                                    //self.goButton.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
+                                                    //goButtonLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
+                                                    //rotateAnimation(goButtonLabel)
+                                                    //self.goButton.transform = .identity
+                                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0.9,
+                                                   relativeDuration: 0.1,
+                                                   animations: {
+                                                    //self.goButton.transform = CGAffineTransform(rotationAngle: -CGFloat.pi)
+                                                    //goButtonLabel.transform = CGAffineTransform(rotationAngle: 0)
+                                                    //self.goButton.transform = .identity
+                                                   })
+            },
+            completion: { [self]_ in
+                
+                
+                goButtonLabel.layer.removeAllAnimations()
+                //animateResultAppear()
+               // goButtonLabel.text = "GO"
+            }
+        )
+    }
+    
+    
+    func animateResultAppear() {
+        UIView.animateKeyframes(
+            withDuration: 3,
+            delay: 0,
+            options: [],
+            animations: { [self] in
+                UIView.addKeyframe(withRelativeStartTime: 0,
+                                   relativeDuration: 0.1,
+                                   animations: {
+                                    resultDestinationLogoImage.alpha = 0
+                                    resultDestinationPlaceLabel.alpha = 0
+                                   })
+                UIView.addKeyframe(withRelativeStartTime: 0,
+                                   relativeDuration: 0.5,
+                                   animations: {
+                                    resultDestinationLogoImage.alpha = 1
+                                    resultDestinationPlaceLabel.alpha = 1
+                                   })
+            },
+            completion: { [self]_ in
+               // goButtonLabel.text = "GO"
+            }
+        )
     }
     
     
@@ -75,5 +178,39 @@ class GoViewController: UIViewController {
     func clearResultDestination() {
         resultDestinationLogoImage.image = nil
         resultDestinationPlaceLabel.text = nil
+    }
+    
+    func scaleAnimation(_ viewToAnimate: UIView) {
+        UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: {
+            viewToAnimate.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }) { (_) in
+            UIView.animate(withDuration: 0.15, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+                viewToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: nil)
+        }
+    }
+}
+
+func rotateAnimation(_ viewToAnimate: UIView) {
+    UIView.animate(withDuration: 4, delay: 0, usingSpringWithDamping: 0.0, initialSpringVelocity: 0.1, options: [.beginFromCurrentState, .curveEaseIn], animations: {
+        viewToAnimate.transform = CGAffineTransform(rotationAngle: .pi)
+    }) { (_) in
+        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1, options: .repeat, animations: {
+            viewToAnimate.transform = CGAffineTransform(rotationAngle: 0)
+        }, completion: nil)
+    }
+}
+
+
+
+extension UIView {
+    func rotate360Degrees(duration: CFTimeInterval = 3) {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat(Double.pi * 14)
+        rotateAnimation.isRemovedOnCompletion = false
+        rotateAnimation.duration = duration
+        rotateAnimation.repeatCount=Float.infinity
+        self.layer.add(rotateAnimation, forKey: nil)
     }
 }

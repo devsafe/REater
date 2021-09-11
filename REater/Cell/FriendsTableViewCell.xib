@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsTableViewCellReuseIndentifier" rowHeight="318" id="LDG-0E-6Bb" customClass="PlacesTableViewCell" customModule="REater" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsTableViewCellReuseIndentifier" rowHeight="318" id="LDG-0E-6Bb" customClass="FriendsTableViewCell" customModule="REater" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="536" height="318"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LDG-0E-6Bb" id="6JO-c0-DFO">
@@ -38,8 +38,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="logoImage" destination="q48-ZK-GDC" id="tSH-w7-5an"/>
-                <outlet property="placeNameLabelOutlet" destination="xdO-mY-oOI" id="ifA-wm-5b8"/>
+                <outlet property="friendAvatarImage" destination="q48-ZK-GDC" id="6gm-2a-XfN"/>
+                <outlet property="friendNameLabel" destination="xdO-mY-oOI" id="W3i-QX-6X0"/>
             </connections>
             <point key="canvasLocation" x="-814.49275362318849" y="-213.61607142857142"/>
         </tableViewCell>

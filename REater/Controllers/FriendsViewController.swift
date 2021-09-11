@@ -30,8 +30,8 @@ extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: FriendsTableViewCell.identifier, for: indexPath) as! PlacesTableViewCell
-        cell.configure(placeName: Storage.allUsers[indexPath.row].name, placeLogo: Storage.allUsers[indexPath.row].avatar)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: FriendsTableViewCell.identifier, for: indexPath) as! FriendsTableViewCell
+        cell.configure(friendName: Storage.allUsers[indexPath.row].name, friendAvatar: Storage.allUsers[indexPath.row].avatar)
         return cell
     }
 }
