@@ -237,10 +237,7 @@ class GoViewController: UIViewController {
                                     resultDestinationPlaceLabel.alpha = 1
                                    })
             },
-            completion: { [self]_ in
-               // goButtonLabel.text = "GO"
-               
-            }
+            completion: nil
         )
     }
     
@@ -261,7 +258,7 @@ class GoViewController: UIViewController {
             withDuration: 6,
             delay: 0,
             options: [.repeat, .autoreverse],
-            animations: { [self] in
+            animations: {
                 UIView.addKeyframe(withRelativeStartTime: 0,
                                    relativeDuration: 1,
                                    animations: {
@@ -273,10 +270,7 @@ class GoViewController: UIViewController {
                                     animateview.transform = CGAffineTransform(translationX: 60, y: 0)
                                    })
             },
-            completion: { [self]_ in
-               // goButtonLabel.text = "GO"
-               
-            }
+            completion: nil
         )
        
     }
