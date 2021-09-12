@@ -18,6 +18,11 @@ class HistoryViewController: UIViewController {
                            forCellReuseIdentifier: "HistoryTableViewCellReuseIndentifier")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
 
 }
 

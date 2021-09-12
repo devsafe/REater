@@ -74,7 +74,7 @@ class GoViewController: UIViewController {
             //goButtonLabel.rotate360Degrees()
 
             
-            Storage.history.append(HistoryModel(date: Date(), place: currentPlace, isGoing: false))
+            
         } else {
             print("error")
         }
@@ -263,14 +263,14 @@ class GoViewController: UIViewController {
             options: [.repeat, .autoreverse],
             animations: { [self] in
                 UIView.addKeyframe(withRelativeStartTime: 0,
-                                   relativeDuration: 0.5,
+                                   relativeDuration: 1,
                                    animations: {
-                                    animateview.transform = CGAffineTransform(translationX: -30, y: 0)
+                                    animateview.transform = CGAffineTransform(translationX: -60, y: 0)
                                    })
-                UIView.addKeyframe(withRelativeStartTime: 0.5,
-                                   relativeDuration: 0.5,
+                UIView.addKeyframe(withRelativeStartTime: 1,
+                                   relativeDuration: 0,
                                    animations: {
-                                    animateview.transform = CGAffineTransform(translationX: 30, y: 0)
+                                    animateview.transform = CGAffineTransform(translationX: 60, y: 0)
                                    })
             },
             completion: { [self]_ in
@@ -291,6 +291,7 @@ class GoViewController: UIViewController {
             resultDestinationLogoImage.image = UIImage(named: Storage.allPlaces[resultIndex].logo)
             backGroundImageView.image = UIImage(named: Storage.allPlaces[resultIndex].logo)
             currentPlace = Storage.allPlaces[resultIndex]
+            Storage.history.append(HistoryModel(date: Date(), place: currentPlace, isGoing: false))
         }
     }
     
