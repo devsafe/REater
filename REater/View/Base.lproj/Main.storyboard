@@ -21,14 +21,14 @@
                                 <rect key="frame" x="-70" y="0.0" width="554" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bk" translatesAutoresizingMaskIntoConstraints="NO" id="pTa-GH-Xft">
-                                        <rect key="frame" x="-70" y="0.0" width="694" height="896"/>
+                                        <rect key="frame" x="-70" y="-10" width="694" height="906"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="pTa-GH-Xft" secondAttribute="trailing" constant="-70" id="Fm1-8g-grq"/>
                                     <constraint firstAttribute="bottom" secondItem="pTa-GH-Xft" secondAttribute="bottom" id="fxH-lF-RBh"/>
-                                    <constraint firstItem="pTa-GH-Xft" firstAttribute="top" secondItem="cjA-jR-o8H" secondAttribute="top" id="ohM-hp-U6y"/>
+                                    <constraint firstItem="pTa-GH-Xft" firstAttribute="top" secondItem="cjA-jR-o8H" secondAttribute="top" constant="-10" id="ohM-hp-U6y"/>
                                     <constraint firstItem="pTa-GH-Xft" firstAttribute="leading" secondItem="cjA-jR-o8H" secondAttribute="leading" constant="-70" id="orS-ua-A7U"/>
                                 </constraints>
                             </view>
