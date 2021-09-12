@@ -157,7 +157,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="2xI-WG-Zmj">
                             <connections>
-                                <segue destination="jf9-J6-bim" kind="show" id="5EE-MK-oKs"/>
+                                <segue destination="jf9-J6-bim" kind="popoverPresentation" popoverAnchorBarButtonItem="2xI-WG-Zmj" id="5EE-MK-oKs">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -203,14 +205,49 @@
         <!--Add Places-->
         <scene sceneID="Dmn-kP-TP0">
             <objects>
-                <viewController id="jf9-J6-bim" sceneMemberID="viewController">
+                <viewController id="jf9-J6-bim" customClass="AddPlaceViewController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xn5-yQ-PYE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="Wg0-Rf-kOx">
+                                <rect key="frame" x="87" y="157" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smh-0l-Qey">
+                                <rect key="frame" x="159" y="305" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8Q-UF-o2T">
+                                <rect key="frame" x="159" y="347" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="choose image"/>
+                                <connections>
+                                    <action selector="selectImageFromGalleryPressed:" destination="jf9-J6-bim" eventType="touchUpInside" id="VsY-eb-Pw5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRZ-pI-ddc">
+                                <rect key="frame" x="374" y="20" width="20" height="20"/>
+                                <connections>
+                                    <action selector="addPlaceButtonPressed:" destination="jf9-J6-bim" eventType="touchUpInside" id="R12-eq-jfV"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fLi-JO-6Xf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fLi-JO-6Xf" firstAttribute="trailing" secondItem="SRZ-pI-ddc" secondAttribute="trailing" constant="20" id="101-qI-WmN"/>
+                            <constraint firstItem="SRZ-pI-ddc" firstAttribute="top" secondItem="fLi-JO-6Xf" secondAttribute="top" constant="20" id="8Gh-Wo-wNj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Places" id="lb4-be-PEi"/>
+                    <connections>
+                        <outlet property="placeImage" destination="Wg0-Rf-kOx" id="GgM-ew-ZeD"/>
+                        <outlet property="placeNameTextField" destination="smh-0l-Qey" id="Kei-Xa-KWV"/>
+                        <outlet property="selectImageFromGallery" destination="a8Q-UF-o2T" id="Jrk-bz-tx6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHd-Ee-5w6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -315,6 +352,7 @@
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="person.2.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="restaurant" width="512" height="512"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
