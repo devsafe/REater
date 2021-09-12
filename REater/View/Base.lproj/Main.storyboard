@@ -14,20 +14,20 @@
             <objects>
                 <viewController id="YaY-8Q-7w8" customClass="GoViewController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pgb-a7-umi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjA-jR-o8H">
-                                <rect key="frame" x="-70" y="0.0" width="554" height="896"/>
+                                <rect key="frame" x="-70" y="0.0" width="554" height="813"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bk" translatesAutoresizingMaskIntoConstraints="NO" id="pTa-GH-Xft">
-                                        <rect key="frame" x="-70" y="-10" width="694" height="906"/>
+                                        <rect key="frame" x="-70" y="-10" width="694" height="833"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="pTa-GH-Xft" secondAttribute="trailing" constant="-70" id="Fm1-8g-grq"/>
-                                    <constraint firstAttribute="bottom" secondItem="pTa-GH-Xft" secondAttribute="bottom" id="fxH-lF-RBh"/>
+                                    <constraint firstAttribute="bottom" secondItem="pTa-GH-Xft" secondAttribute="bottom" constant="-10" id="fxH-lF-RBh"/>
                                     <constraint firstItem="pTa-GH-Xft" firstAttribute="top" secondItem="cjA-jR-o8H" secondAttribute="top" constant="-10" id="ohM-hp-U6y"/>
                                     <constraint firstItem="pTa-GH-Xft" firstAttribute="leading" secondItem="cjA-jR-o8H" secondAttribute="leading" constant="-70" id="orS-ua-A7U"/>
                                 </constraints>
@@ -132,7 +132,7 @@
             <objects>
                 <viewController id="meV-Wg-1bW" customClass="PlacesViewController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KeQ-q5-zz7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oi4-Qy-HAj">
@@ -150,12 +150,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Places" id="APx-6A-vvx">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="list.dash" catalog="system" id="0ac-aV-Phi">
+                        <barButtonItem key="leftBarButtonItem" title="History" id="0ac-aV-Phi">
                             <connections>
                                 <segue destination="9uZ-gj-pl1" kind="show" id="gYu-GT-3in"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="2xI-WG-Zmj">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="2xI-WG-Zmj">
                             <connections>
                                 <segue destination="jf9-J6-bim" kind="popoverPresentation" popoverAnchorBarButtonItem="2xI-WG-Zmj" id="5EE-MK-oKs">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -176,7 +176,7 @@
             <objects>
                 <viewController id="9uZ-gj-pl1" customClass="HistoryViewController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NG7-Lo-c04">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xbg-h7-l86">
@@ -228,7 +228,7 @@
                                     <action selector="selectImageFromGalleryPressed:" destination="jf9-J6-bim" eventType="touchUpInside" id="VsY-eb-Pw5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRZ-pI-ddc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRZ-pI-ddc">
                                 <rect key="frame" x="374" y="20" width="20" height="20"/>
                                 <connections>
                                     <action selector="addPlaceButtonPressed:" destination="jf9-J6-bim" eventType="touchUpInside" id="R12-eq-jfV"/>
@@ -258,7 +258,7 @@
             <objects>
                 <viewController id="ej1-6L-qAo" customClass="FriendsViewController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H8U-3A-AVd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aho-M5-f1S">
@@ -295,7 +295,7 @@
             <objects>
                 <viewController id="HIN-pX-8Di" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cap-em-PYD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Et8-6X-TjZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -310,7 +310,8 @@
         <scene sceneID="ihC-Od-sro">
             <objects>
                 <tabBarController id="Yi8-bg-Hml" customClass="TabBarController" customModule="REater" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mzj-65-gzm">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="mzj-65-gzm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -349,7 +350,6 @@
         <image name="bk" width="2024" height="2045"/>
         <image name="circles.hexagonpath" catalog="system" width="128" height="112"/>
         <image name="flag.circle" catalog="system" width="128" height="121"/>
-        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="person.2.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="restaurant" width="512" height="512"/>
