@@ -19,16 +19,13 @@ class FriendsViewController: UIViewController {
         tableView.register(UINib(nibName: "FriendsTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "FriendsTableViewCellReuseIndentifier")
     }
-    
-
 }
-
 
 extension FriendsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         Storage.allUsers.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: FriendsTableViewCell.identifier, for: indexPath) as! FriendsTableViewCell
         cell.configure(friendName: Storage.allUsers[indexPath.row].name, friendAvatar: Storage.allUsers[indexPath.row].avatar)

@@ -22,9 +22,12 @@ class GoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addBlur()
         backGroundImageView.image = nil
         //view.delegate = self
+        resultDestinationLogoImage.image = UIImage(named: "restaurant")
+        backGroundImageView.image = UIImage(named: "default")
     }
     
     override func viewWillLayoutSubviews() {
@@ -34,6 +37,7 @@ class GoViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = .systemBackground
        goButtonLabel.text = "GO"
+        
         self.view.backgroundColor = .systemPink
         
         
@@ -46,6 +50,7 @@ class GoViewController: UIViewController {
         //shakeAnimation(animateview: backGroundImageView)
         rotateAnimation(backGroundImageView)
         shakeAnimation2(animateview: backGroundView)
+        
     }
     
     
@@ -69,7 +74,7 @@ class GoViewController: UIViewController {
             //goButtonLabel.rotate360Degrees()
 
             
-            Storage.history.append(HistoryModel(date: Date(), place: currentPlace, isGoing: false))
+            
         } else {
             print("error")
         }
@@ -232,10 +237,7 @@ class GoViewController: UIViewController {
                                     resultDestinationPlaceLabel.alpha = 1
                                    })
             },
-            completion: { [self]_ in
-               // goButtonLabel.text = "GO"
-               
-            }
+            completion: nil
         )
     }
     
@@ -256,22 +258,19 @@ class GoViewController: UIViewController {
             withDuration: 6,
             delay: 0,
             options: [.repeat, .autoreverse],
-            animations: { [self] in
+            animations: {
                 UIView.addKeyframe(withRelativeStartTime: 0,
-                                   relativeDuration: 0.5,
+                                   relativeDuration: 1,
                                    animations: {
-                                    animateview.transform = CGAffineTransform(translationX: -30, y: 0)
+                                    animateview.transform = CGAffineTransform(translationX: -60, y: 0)
                                    })
-                UIView.addKeyframe(withRelativeStartTime: 0.5,
-                                   relativeDuration: 0.5,
+                UIView.addKeyframe(withRelativeStartTime: 1,
+                                   relativeDuration: 0,
                                    animations: {
-                                    animateview.transform = CGAffineTransform(translationX: 30, y: 0)
+                                    animateview.transform = CGAffineTransform(translationX: 60, y: 0)
                                    })
             },
-            completion: { [self]_ in
-               // goButtonLabel.text = "GO"
-               
-            }
+            completion: nil
         )
        
     }
@@ -286,6 +285,7 @@ class GoViewController: UIViewController {
             resultDestinationLogoImage.image = UIImage(named: Storage.allPlaces[resultIndex].logo)
             backGroundImageView.image = UIImage(named: Storage.allPlaces[resultIndex].logo)
             currentPlace = Storage.allPlaces[resultIndex]
+            Storage.history.append(HistoryModel(date: Date(), place: currentPlace, isGoing: false))
         }
     }
     

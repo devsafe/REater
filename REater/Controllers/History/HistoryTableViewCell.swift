@@ -21,13 +21,15 @@ class HistoryTableViewCell: UITableViewCell {
         
     }
     
+    
+    
     func configure(placeName: String?, placeLogo: String, date: Date) {
         //imageChannelsCell.image = UIImage(named: imageName ?? "logo-default")
         placeNameLabelOutlet.text = placeName
         logoImage.image = UIImage(named: placeLogo)
         
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+        formatter.dateStyle = .medium
         let dateString = formatter.string(from: date)
         
         dateLabel.text = dateString
